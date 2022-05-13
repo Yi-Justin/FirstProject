@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Modak");
 
+
 .title{
     display: flex;
     justify-content: center;
@@ -17,6 +18,7 @@ h1{
     font-weight: 100;
     -webkit-text-stroke: 2px black;
     padding-top: 14px;
+    
 }
 .links{
     display: flex;
@@ -26,19 +28,21 @@ h1{
 .body{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 .textbox{
     text-align: center;
-    width: 400px;
-    height: 400px;
+    width: 700px;
+    height: 700px;
     border-style: solid;
     border-radius: 10px;
+    margin-left: 10px;
     
 }
 .imagebox{
-    width: 400px;
-    height: 400px;
+    width: 700px;
+    height: 700px;
     border-style: solid;
     border-radius: 10px;
-    
+    margin-right: 10px;
 }

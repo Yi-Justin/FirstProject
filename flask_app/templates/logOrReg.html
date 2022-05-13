@@ -4,44 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/log_or_reg.css') }}">
+    
+
     <title>Login or Register</title>
 </head>
 <body>
-    <h2>Register:</h2>
-    <form action = "/register" method = "post">
-        <label for = "username">Username:</label>
-        <input type="text" name = "username" id = "username">
-        <label for = "email">Email:</label>
-        <input type="text" name = "email" id = "email">
-        <label for = "password">Password:</label>
-        <input type="text" name = "password" id = "password">
-        <label for = "confirm">Confrim Password:</label>
-        <input type="text" name = "confirm" id = "confirm">
-        <button>Register</button>
-        {% with messages = get_flashed_messages(category_filter =['register']) %}
-            {% if messages %}
-                <p style="color:red ;">Something went wrong....</p>                            
-                {% for message in messages %}            
-                    <p>{{message}}</p>                   
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </form>
-    <h2>Login:</h2>
-    <form action = "/login" method = "post">
-        <label for="email">Email:</label>
-        <input type="text" name = "email" id = "email">
-        <label for="password">Password:</label>
-        <input type="text" name = "password" id = "password">
-        <button>Login</button>
-        {% with messages = get_flashed_messages(category_filter =['login']) %}
-        {% if messages %}
-            <p style="color:red ;">Something went wrong....</p>                            
-            {% for message in messages %}            
-                <p>{{message}}</p>                   
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-    </form>
+    <div class="container">
+        <div class="register">
+            <h2>Register:</h2>
+            <form action = "/register" method = "post">
+                <label for = "username">Username:</label>
+                <div>
+                    <input type="text" name = "username" id = "username">
+                </div>
+                <label for = "email">Email:</label>
+                <div>
+                    <input type="text" name = "email" id = "email">    
+                </div>
+                <label for = "password">Password:</label>
+                <div>
+                    <input type="text" name = "password" id = "password">
+                </div>
+                <label for = "confirm">Confrim Password:</label>
+                <div>
+                    <input type="text" name = "confirm" id = "confirm">
+                </div>
+                <button>Register</button>
+                {% with messages = get_flashed_messages(category_filter =['register']) %}
+                    {% if messages %}
+                        <p style="color:red ;">Something went wrong....</p>                            
+                        {% for message in messages %}            
+                            <p>{{message}}</p>                   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+        <div class="login">
+            <h2>Login:</h2>
+            <form action = "/login" method = "post">
+                <label for="email">Email:</label>
+                <div>
+                    <input type="text" name = "email" id = "email">
+                </div>
+                <label for="password">Password:</label>
+                <div>
+                    <input type="text" name = "password" id = "password">
+                </div>
+                <button>Login</button>
+                {% with messages = get_flashed_messages(category_filter =['login']) %}
+                {% if messages %}
+                    <p style="color:red ;">Something went wrong....</p>                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+    </div>
 </body>
 </html>
