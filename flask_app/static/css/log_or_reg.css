@@ -1,0 +1,16 @@
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+}
+button{
+    margin-top: 10px;
+}
+.register{
+    border-style: solid;
+    padding: 10px 20px;
+}
+.login{
+    border-style: solid;
+    padding: 10px 20px;
+}
