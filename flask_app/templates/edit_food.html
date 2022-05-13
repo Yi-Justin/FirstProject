@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+
+    <form action="/update/food" method = 'post'>
+    <input type="hidden" name = "id" value = {{edit.id}}>
+    <label for="city">City:</label>
+    <input type="text" name="city" value="{{edit.city}}">
+    <label for="state">State:</label>
+    <input type="text" name="state" value="{{edit.state}}">
+    <label for="restaraunt">Restaraunt</label>
+    <input type="text" name="restaraunt" value="{{edit.restaraunt}}">
+    <label for="dish">Dish:</label>
+    <input type="text" name="dish" value="{{edit.dish}}">   
+    <label for="descRev">Description/Review:</label>
+    <textarea name = "descRev" value="{{edit.descRev}}"rows="4" cols="100"></textarea>
+    <label for="rating">Rating:</label>
+    <input type="number" name="rating" value="{{edit.rating}}" min="1" max="5">               
+    <button>Update</button>
+    </form>
+    {% with messages = get_flashed_messages(category_filter =['foods']) %}
+    {% if messages %}
+        <p style="color:red ;">Something went wrong....</p>                            
+        {% for message in messages %}            
+            <p>{{message}}</p>                   
+        {% endfor %}
+    {% endif %}
+    {% endwith %} 
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+</head>
+<body>
+    <h1>{{user.username}}'s Entries</h1>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/food/new">New Food?</a>
+    <a href = "/logout">Logout</a>    
+    {% with messages = get_flashed_messages(category_filter =['foods']) %}
+    {% if messages %}
+        <p style="color:red ;">Something went wrong....</p>                            
+        {% for message in messages %}            
+            <p>{{message}}</p>                   
+        {% endfor %}
+    {% endif %}
+    {% endwith %} 
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Restaraunt</th>
+            <th>Dish</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+{% for food in foods %}
+<!-- Can only see food that belongs to user who created it -->
+{% if food.user_id == session.user_id %}
+            <td><a href="/view/{{food.state}}">{{food.state}}</a></td>
+            <td>{{food.restaraunt}}</td>
+            <td>{{food.dish}}</td>
+            <td>{{food.rating}}</td>
+            <td>
+                <a href="/view/food/{{food.id}}">View</a>
+                <a href="/edit/food/{{food.id}}">Edit</a>
+                <a href="/delete/{{food.id}}">Delete</a>
+                <!-- {{user.username}} -->
+            </td>
+        </tr>
+{% endif %}
+{% endfor %}
+    </table>
+</body>
+</html>

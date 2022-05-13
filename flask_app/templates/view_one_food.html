@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Food</title>
+</head>
+<body>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+    <h1>Dish : {{food.dish}}</h1>
+    <p>Location : {{food.city}}, {{food.state}}</p>
+    <p>Description/Review : {{food.descRev}}</p>
+    <p>Rating : {{food.rating}}</p>
+    <p>Updated At: {{food.updated_at}}</p>
+    <!-- <p>Foodie : {{user.id}}</p> -->
+    {% if food.user_id == session.user_id %}
+    <a href="/edit/food/{{food.id}}">Edit</a>
+    {% endif %}
+</body>
+</html>

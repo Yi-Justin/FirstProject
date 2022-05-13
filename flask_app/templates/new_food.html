@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Food</title>
+</head>
+<body>
+    <h1>Add New Food!</h1>
+    <form action="/create" method = 'post'>
+        <label for="city">City (ex. Philadelphia) : </label>
+        <input type="text" name = "city" id = "city">
+        <label for="state">State (Abbreviation ex. PA) : </label>
+        <input type="text" name = "state" id = "state">
+        <label for="restaraunt">Name of Restaraunt:</label>
+        <input type="text" name = "restaraunt" id = "restaraunt">
+        <label for="dish">Name of Dish</label>
+        <input type="text" name = "dish" id = "dish">
+        <label for="descRev">Description/Review:</label>
+        <textarea name = "descRev" id = "descRev" rows="4" cols="100"></textarea>
+        <label for="rating">Rating (1 = Disgusting - 5 = Delicious):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5">
+        <button>Submit!</button>
+    </form>
+</body>
+</html>

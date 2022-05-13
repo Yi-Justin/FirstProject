@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <a href="/myprofile/{{user.id}}">My Profile</a>
+    <a href="/food/new">New Food?</a>
+    <a href = "/logout">Logout</a> 
+    <h1>Welcome {{user.username}}!</h1>
+    <h2>Dive into the Wonderful World of Foods</h2>
+    <h3>Checkout Some Other People's Entries!</h3>
+    {% with messages = get_flashed_messages(category_filter =['foods']) %}
+    {% if messages %}
+        <p style="color:red ;">Something went wrong....</p>                            
+        {% for message in messages %}            
+            <p>{{message}}</p>                   
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Restaraunt</th>
+            <th>Dish</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+{% for food in foods %}
+            <td><a href="/view/{{food.state}}">{{food.state}}</a></td>
+            <td>{{food.restaraunt}}</td>
+            <td>{{food.dish}}</td>
+            <td>{{food.rating}}</td>
+            <td>
+                <a href="/view/food/{{food.id}}">View</a>
+                {% if food.user_id == session.user_id %}
+                <a href="/edit/food/{{food.id}}">Edit</a>
+                <a href="/delete/{{food.id}}">Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+{% endfor %}
+    </table>
+</body>
+</html>

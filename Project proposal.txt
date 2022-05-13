@@ -1,0 +1,4 @@
+Description: A way to track the foods you try at various places
+Stack: Python
+Feature list: Create new Locations to store food list, upload pictures of foods, update, delete. 
+Github link:https://github.com/Yi-Justin/FirstProject
