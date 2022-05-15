@@ -45,7 +45,7 @@ def login():
 @app.route("/dashboard")
 def dashoard():
     if "user_id" not in session:
-        return redirect('/logout')
+        return redirect('/logreg')
     data = {
         'id' : session["user_id"]
     }
@@ -55,7 +55,7 @@ def dashoard():
 @app.route("/myprofile/<int:id>")
 def profile(id):
     if "user_id" not in session:
-        return redirect('/logout')
+        return redirect('/logreg')
     data = {
         'id' : session["user_id"]
     }

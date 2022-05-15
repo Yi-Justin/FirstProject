@@ -8,7 +8,7 @@ bcrypt = Bcrypt(app)
 @app.route("/food/new")
 def new_foods():
     if 'user_id' not in session : 
-        return redirect('/logout')
+        return redirect('/logreg')
     data = {
         'id' : session['user_id']
     }
@@ -41,7 +41,7 @@ def view_one_food(id):
 @app.route('/create', methods = ['POST'])
 def create_food():
     if 'user_id' not in session:
-        return redirect("/logout")
+        return redirect("/logreg")
     if not Food.validate_food(request.form):
         return redirect('/dashboard')
     data = {

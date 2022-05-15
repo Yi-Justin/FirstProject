@@ -2,39 +2,6 @@
 *{
     margin: 0 10px;
 }
-.container{
-    display: flex;
-    justify-content: space-evenly;
-}
-button{
-    margin-top: 10px;
-}
-.register{
-    align-items: center;
-    border-style: solid;
-    padding: 10px 20px;
-    height: 500px auto;
-    width: 300px;
-    border-radius: 10px;
-}
-.login{
-    border-style: solid;
-    padding: 10px 20px;
-    height: 500px auto;
-    width: 300px;
-    border-radius: 10px;
-}
-.links{
-    margin: 10px 20px;
-    text-align: right;
-}
-form{
-    text-align: center;
-    padding: 20px;
-}
-h2{
-    text-align: center;
-}
 .banner{
     display: flex;
     align-items: center;
@@ -53,6 +20,9 @@ h2{
     text-align: right;
     margin-left: 80%;
     margin-top: 5px;
+}
+h2{
+    text-align: center;
 }
 span{
     color: orange;

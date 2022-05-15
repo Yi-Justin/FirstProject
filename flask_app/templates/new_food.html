@@ -4,24 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/new_food.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>New Food</title>
 </head>
 <body>
+    <h2 class="title">FOODIES<span>ADVENTURE</span></h2>
+    <div class="banner">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/food/new">New Food?</a>
+        <a href = "/logout">Logout</a>   
+    </div>
     <h1>Add New Food!</h1>
-    <form action="/create" method = 'post'>
-        <label for="city">City (ex. Philadelphia) : </label>
-        <input type="text" name = "city" id = "city">
-        <label for="state">State (Abbreviation ex. PA) : </label>
-        <input type="text" name = "state" id = "state">
-        <label for="restaraunt">Name of Restaraunt:</label>
-        <input type="text" name = "restaraunt" id = "restaraunt">
-        <label for="dish">Name of Dish</label>
-        <input type="text" name = "dish" id = "dish">
-        <label for="descRev">Description/Review:</label>
-        <textarea name = "descRev" id = "descRev" rows="4" cols="100"></textarea>
-        <label for="rating">Rating (1 = Disgusting - 5 = Delicious):</label>
-        <input type="number" id="rating" name="rating" min="1" max="5">
-        <button>Submit!</button>
-    </form>
+    <div class="container">
+        <form action="/create" method = 'post'>
+            <div class="form">
+                <label for="city">City (ex. Philadelphia) : </label>
+                <input type="text" name = "city" id = "city">
+                <label for="state">State (Abbreviation ex. PA) : </label>
+                <input type="text" name = "state" id = "state">
+            </div>
+            <label for="restaraunt">Name of Restaraunt:</label>
+            <div class="form">
+                <input type="text" name = "restaraunt" id = "restaraunt">
+            </div>
+            <label for="dish">Name of Dish:</label>
+            <div class="form">
+                <input type="text" name = "dish" id = "dish">
+            </div>
+            <label for="descRev">Description/Review:</label>
+            <div class="form">
+                <textarea name = "descRev" id = "descRev" rows="4" cols="100"></textarea>
+            </div>
+            <label for="rating">Rating (1 = Disgusting - 5 = Delicious):</label>
+            <div class="form">
+                <input type="number" id="rating" name="rating" min="1" max="5">            
+            </div>
+            <button class="button">Submit!</button>
+        </form>
+    </div>
 </body>
 </html>
