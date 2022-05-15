@@ -1,24 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Modak");
 
-
 .title{
     display: flex;
     justify-content: center;
     align-items: center;
     border-style: solid;
-    background-color: rgb(235, 235, 78);
+    background-color: rgb(233, 233, 134);
     border-radius: 10px;
     height: 100px;
     margin: 10px;
 }
 h1{
     font-family: Modak;
-    color: rgb(139, 209, 129);
+    color: rgb(67, 193, 252);
     font-size: 100px;
     font-weight: 100;
     -webkit-text-stroke: 2px black;
     padding-top: 14px;
-    
+}
+.adventure{
+    color: orange;
 }
 .links{
     display: flex;
@@ -32,11 +33,12 @@ h1{
 }
 .textbox{
     text-align: center;
-    width: 700px;
-    height: 700px;
+    width: 350px;
+    height: 200px;
     border-style: solid;
     border-radius: 10px;
     margin-left: 10px;
+    font-size: 30px;
     
 }
 .imagebox{
@@ -45,4 +47,8 @@ h1{
     border-style: solid;
     border-radius: 10px;
     margin-right: 10px;
+}
+.homescreen{
+    height: 700px;
+    width: 700px;
 }
