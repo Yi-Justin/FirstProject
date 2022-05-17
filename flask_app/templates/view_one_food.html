@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/view_one.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>View Food</title>
 </head>
 <body>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/logout">Logout</a>
-    <h1>Dish : {{food.dish}}</h1>
-    <p>Location : {{food.city}}, {{food.state}}</p>
-    <p>Description/Review : {{food.descRev}}</p>
-    <p>Rating : {{food.rating}}</p>
-    <p>Updated At: {{food.updated_at}}</p>
-    <!-- <p>Foodie : {{user.id}}</p> -->
-    {% if food.user_id == session.user_id %}
-    <a href="/edit/food/{{food.id}}">Edit</a>
-    {% endif %}
+    <h2 class="title">FOODIES<span>ADVENTURE</span></h2>
+    <div class="banner">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/food/new">New Food?</a>
+        <a href = "/logout">Logout</a> 
+    </div>
+    <div class="view_one">
+        <div>
+            <h1>Dish : {{food.dish}}</h1>
+            <p>Restaraunt : {{food.restaraunt}}</p>
+            <p>Location : {{food.city}}, {{food.state}}</p>
+            <p>Description/Review : {{food.descRev}}</p>
+            <p>Rating : {{food.rating}}</p>
+            <p>Updated At: {{food.updated_at}}</p>
+            {% if food.user_id == session.user_id %}
+            <p><a href="/edit/food/{{food.id}}">Edit</a></p>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>

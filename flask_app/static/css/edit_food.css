@@ -2,6 +2,9 @@
 *{
     margin: 0 10px;
 }
+h2{
+    text-align: center;
+}
 .title{
     border-style: solid;
     padding-right: 12px;
@@ -24,28 +27,27 @@ span{
     align-items: center;
     justify-content: right;
 }
-h1{
-    text-align: center;
-}
 .form{
     margin: 20px 0;
 }
 .container{
-    background-color: rgb(67, 193, 252);
     display: flex;
     justify-content:center;
     align-items: center;
     border-style: double;
     padding: 20px;
+    background-color: lightgray;
 }
 label{
-    margin-left: 0px;
+    margin-left: 10px;
 }
 input, textarea{
     border-radius: 5px;
     box-shadow: black 1px 2px;
 }
 .button{
+    margin-left: 9px;
+    margin-top: 10px;
     border-radius: 5px;
     padding: 3px 7px;
     box-shadow: black 1px 2px;

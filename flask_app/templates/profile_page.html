@@ -34,7 +34,6 @@
         </tr>
         <tr>
 {% for food in foods %}
-<!-- Can only see food that belongs to user who created it -->
 {% if food.user_id == session.user_id %}
             <td><a href="/view/{{food.state}}">{{food.state}}</a></td>
             <td>{{food.restaraunt}}</td>

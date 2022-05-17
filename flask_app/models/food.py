@@ -14,6 +14,7 @@ class Food:
         self.user_id = data["user_id"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
+        # self.creator = None
     
     @classmethod
     def save(cls,data):
@@ -48,7 +49,7 @@ class Food:
 
     @classmethod
     def get_by_state(cls,data):
-        query = "SELECT * FROM foods WHERE state = %(state)s;"
+        query = "SELECT * FROM foods WHERE state = %(state)s ORDER BY city ASC;"
         result = connectToMySQL("foodiesAdventure").query_db(query, data)
         food_by_state = []
         for row in result:
