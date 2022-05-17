@@ -4,28 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_food.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Edit</title>
 </head>
 <body>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/logout">Logout</a>
-
-    <form action="/update/food" method = 'post'>
-    <input type="hidden" name = "id" value = {{edit.id}}>
-    <label for="city">City:</label>
-    <input type="text" name="city" value="{{edit.city}}">
-    <label for="state">State:</label>
-    <input type="text" name="state" value="{{edit.state}}">
-    <label for="restaraunt">Restaraunt</label>
-    <input type="text" name="restaraunt" value="{{edit.restaraunt}}">
-    <label for="dish">Dish:</label>
-    <input type="text" name="dish" value="{{edit.dish}}">   
-    <label for="descRev">Description/Review:</label>
-    <textarea name = "descRev" value="{{edit.descRev}}"rows="4" cols="100"></textarea>
-    <label for="rating">Rating:</label>
-    <input type="number" name="rating" value="{{edit.rating}}" min="1" max="5">               
-    <button>Update</button>
-    </form>
+    <h2 class="title">FOODIES<span>ADVENTURE</span></h2>
+    <div class="banner">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/food/new">New Food?</a>
+        <a href = "/logout">Logout</a>   
+    </div>
+    <h2>Edit Entry:</h2>
+    <div class="container">
+        <form action="/update/food" method = 'post'>
+            <div>
+                <input type="hidden" name = "id" value = {{edit.id}}>
+            </div>
+            <label for="city">City:</label>
+            <div>
+                <input type="text" name="city" value="{{edit.city}}">
+            </div>
+            <label for="state">State:</label>
+            <div>
+                <input type="text" name="state" value="{{edit.state}}">
+            </div>
+            <label for="restaraunt">Restaraunt</label>
+            <div>
+                <input type="text" name="restaraunt" value="{{edit.restaraunt}}">
+            </div>
+            <label for="dish">Dish:</label>
+            <div>
+                <input type="text" name="dish" value="{{edit.dish}}"> 
+            </div>  
+            <label for="descRev">Description/Review:</label>
+            <div>
+                <textarea name = "descRev" value="{{edit.descRev}}"rows="4" cols="100"></textarea>
+            </div>
+            <label for="rating">Rating:</label>
+            <div>
+                <input type="number" name="rating" value="{{edit.rating}}" min="1" max="5">  
+            </div>             
+            <button class="button">Update</button>
+            </form>      
+    </div>
     {% with messages = get_flashed_messages(category_filter =['foods']) %}
     {% if messages %}
         <p style="color:red ;">Something went wrong....</p>                            

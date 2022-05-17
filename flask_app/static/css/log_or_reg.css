@@ -10,6 +10,7 @@ button{
     margin-top: 10px;
 }
 .register{
+    background-color: rgb(67, 193, 252);
     align-items: center;
     border-style: solid;
     padding: 10px 20px;
@@ -18,6 +19,7 @@ button{
     border-radius: 10px;
 }
 .login{
+    background-color: orange;
     border-style: solid;
     padding: 10px 20px;
     height: 500px auto;
@@ -56,4 +58,15 @@ h2{
 }
 span{
     color: orange;
+}
+body{
+    background-image: url(../img/food_background.jpeg);
+}
+a{
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-weight: 400;
 }

@@ -1,3 +1,4 @@
+from unittest import result
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import food
 import re
@@ -12,6 +13,7 @@ class User:
         self.password = data["password"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
+        # self.foods = []
 
     @classmethod
     def save (cls,data):
@@ -40,6 +42,26 @@ class User:
         if len(results) < 1:
             return False
         return cls(results[0])
+    
+    # @classmethod
+    # def get_users_with_foods(cls, data):
+    #     query = "SELECT * FROM users LEFT JOIN foods ON foods.user_id = users.id WHERE users.id = %(id)s;"
+    #     results = connectToMySQL("foodiesadventure").query_db(query, data)
+    #     user = cls(results[0])
+    #     for row in results:
+    #         food_data = {
+    #             'id' : row["foods.id"],
+    #             'state':row['state'],
+    #             'city':row['city'],
+    #             'restaraunt':row['restaraunt'],
+    #             'dish': row['dish'],
+    #             'descRev': row['descRev'],
+    #             "rating": row ['rating'],
+    #             'created_at': row ['foods.created_at'],
+    #             'updated_at': row ['foods.updated_at']
+    #         }
+    #         user.foods.append(food.Food(food_data))
+    #         return user
 
     @staticmethod
     def validate_reg(user):

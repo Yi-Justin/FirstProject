@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homepage.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='homepage.js') }}"></script>
     <title>HomePage</title>
 </head>
 <body>
     <div class="links">
-        <a href = "/logreg">Login/Register</a>
+        <a href = "/logreg" class="signin">Login/Register</a>
     </div>
     <div class="title">
         <h1>FOODIES</h1>
@@ -17,10 +18,13 @@
     </div>
     <div class="body">
         <div class="imagebox">
-            <img  class = "homescreen" src="{{ url_for('static', filename='img/mochi.jpg') }}">
-        </div>
+            <img class = "koreandog" src="{{ url_for('static', filename='img/mochi.jpg') }}">
+            <img  class="ramen" src="{{ url_for('static', filename='img/ramen.jpg') }}">
+            <img  class = 'chashu' src="{{ url_for('static', filename='img/chashubowl.png') }}">
+            <img  class = 'breakfast' src="{{ url_for('static', filename='img/breakfast.jpg') }}">
+        </div> 
         <div class="textbox">
-            <p>Sign in or register to start your list of amazing foods you've tried around the world!</p>
+            <p><a href="/logreg">Login/Register</a> to start your list of foods you've tried around the country!</p>
         </div>
     </div>
 </body>

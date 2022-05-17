@@ -7,15 +7,6 @@
     align-items: center;
     justify-content: right;
 }
-a{
-    margin: 0 5px;
-}
-h3{
-    text-align: center;
-}
-table{
-    margin-top: 30px;
-}
 .title{
     border-style: solid;
     padding-right: 12px;

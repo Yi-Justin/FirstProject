@@ -1,3 +1,5 @@
+from email.mime import image
+import os
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.user import User
@@ -37,6 +39,7 @@ def view_one_food(id):
         'id' : session['user_id']
     }
     return render_template("view_one_food.html", food = Food.show_one(data), user = User.get_by_id(user_data))
+
 
 @app.route('/create', methods = ['POST'])
 def create_food():
@@ -95,3 +98,5 @@ def delete(id):
     }
     Food.delete(data)
     return redirect('/dashboard')
+
+# @app.route('/view/<string:state>')

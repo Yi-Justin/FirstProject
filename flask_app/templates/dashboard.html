@@ -17,6 +17,7 @@
     </div>
     <h2>Welcome {{user.username}}!</h1>
     <h3>Mhmmmm Fooooood!</h3>
+
     {% with messages = get_flashed_messages(category_filter =['foods']) %}
     {% if messages %}
         <p style="color:red ;">Something went wrong....</p>                            
